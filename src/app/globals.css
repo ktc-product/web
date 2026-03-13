@@ -1,0 +1,145 @@
+@import "tailwindcss";
+
+:root {
+  /* KTC Brand Colors */
+  --ktc-teal: #008080;
+  --ktc-teal-light: #00a3a3;
+  --ktc-teal-dark: #006666;
+  --ktc-coral: #DF4C4C;
+  --ktc-coral-light: #ff6b6b;
+
+  /* Neutrals */
+  --background: #fafbfc;
+  --foreground: #0f172a;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --border-light: rgba(0, 0, 0, 0.06);
+  --border-medium: rgba(0, 0, 0, 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+
+/* Gradient text utility — teal */
+.gradient-text {
+  background: linear-gradient(135deg, #008080 0%, #00a3a3 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow effects — teal */
+.glow-teal {
+  box-shadow: 0 4px 16px rgba(0, 128, 128, 0.15);
+}
+
+.glow-line {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 128, 128, 0.4),
+    transparent
+  );
+  height: 1px;
+}
+
+/* Radial gradient overlay */
+.radial-fade {
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    rgba(0, 128, 128, 0.08),
+    transparent
+  );
+}
+
+/* Smooth fade-in animation */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease-out forwards;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 0.8s ease-out 0.1s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 0.8s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-fade-up-delay-3 {
+  animation: fade-up 0.8s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Feature card hover */
+.feature-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.feature-card:hover {
+  border-color: rgba(0, 128, 128, 0.2);
+  box-shadow: 0 4px 16px rgba(0, 128, 128, 0.15);
+}
+
+/* Marquee animation for logos */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Dot grid pattern */
+.dot-grid {
+  background-image: radial-gradient(
+    rgba(0, 128, 128, 0.08) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+}
